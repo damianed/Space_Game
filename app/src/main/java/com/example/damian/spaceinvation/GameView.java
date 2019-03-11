@@ -29,6 +29,7 @@ public class GameView extends SurfaceView implements SensorEventListener, Surfac
     SensorManager sensorManager;
     Sensor accelerometer;
     private int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
+    private int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
 
     public GameView(Context context) {
         super(context);
@@ -162,7 +163,7 @@ public class GameView extends SurfaceView implements SensorEventListener, Surfac
             Paint p = new Paint();
             p.setColor(Color.RED);
             p.setTextSize(100);
-            canvas.drawText("Perdiste :(", ship.x, ship.y, p);
+            canvas.drawText("You lose :(", screenWidth/2 - 250, screenHeight/2, p);
         }
     }
 
